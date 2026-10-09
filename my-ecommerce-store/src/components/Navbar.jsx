@@ -1,26 +1,47 @@
+import { ShoppingCart } from 'lucide-react';
+
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between bg-slate-950 px-8 py-5 text-white">
-      <h1 className="text-2xl font-bold">
-        SPOTLESS-G <span className="text-cyan-400">TECH HUB</span>
-      </h1>
+    <nav className="flex items-center justify-between bg-slate-950 px-6 py-4 text-white sm:px-8">
 
-      <div className="flex items-center gap-6">
-        <a href="#" className="hover:text-cyan-400">
+      {/* Company logo */}
+      <a
+        href="/"
+        className="shrink-0 overflow-hidden rounded-lg bg-white p-1"
+        aria-label="Spotless-G Tech Hub home"
+      >
+        <img
+          src="/images/spotless-g-logo.jpg"
+          alt="Spotless-G Tech Hub"
+          className="h-14 w-32 object-contain"
+        />
+      </a>
+
+      {/* Navigation links */}
+      <div className="flex items-center gap-5 text-sm font-medium sm:gap-7">
+
+        <a href="/" className="transition hover:text-cyan-400">
           Home
         </a>
 
-        <a href="#" className="hover:text-cyan-400">
+        <a href="/products" className="transition hover:text-cyan-400">
           Products
         </a>
 
-        <a href="#" className="hover:text-cyan-400">
+        <a href="/courses" className="transition hover:text-cyan-400">
           Courses
         </a>
 
-        <a href="#" className="hover:text-cyan-400">
-          Cart (0)
+        {/* Shopping cart */}
+        <a
+          href="/cart"
+          className="flex items-center gap-2 transition hover:text-cyan-400"
+          aria-label="Shopping cart, 0 items"
+        >
+          <ShoppingCart size={21} strokeWidth={2} />
+          <span>Cart (0)</span>
         </a>
+
       </div>
     </nav>
   );
